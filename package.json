@@ -1,0 +1,23 @@
+{
+  "name": "cypress_2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.js",
+  "dependencies": {
+    "cypress": "^10.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astestqa/Cypress-2.git"
+  },
+  "author": "AS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/astestqa/Cypress-2/issues"
+  },
+  "homepage": "https://github.com/astestqa/Cypress-2#readme"
+}
