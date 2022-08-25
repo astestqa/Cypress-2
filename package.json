@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "cy:ci": "cypress run --headless --spec 'cypress/e2e/**/*'",
+    "cy:ci": "cypress run --headless --config-file cypress.config.js --spec 'cypress/e2e/**/*'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
