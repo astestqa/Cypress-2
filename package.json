@@ -2,7 +2,7 @@
   "name": "cypress_2022",
   "version": "1.0.0",
   "description": "",
-  "main": "cypress.config.js",
+  "master": "cypress.config.js",
   "dependencies": {
     "cypress": "^10.3.1"
   },
