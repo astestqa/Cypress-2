@@ -2,6 +2,10 @@
 
 cd cypressgit/
 
-npx cypress run 
+#npx cypress run 
+#$(npm bin)/cypress run
 
-$(npm bin)/cypress run
+npm run cy:ci
+
+#npm run testHeadless
+#npm run withHeadless
