@@ -8,4 +8,4 @@ cd cypressgit/
 #npm run cy:ci
 
 #npm run testHeadless
-npm run withHeadless
+npm run withHeadTest
