@@ -7,7 +7,8 @@ cd cypressgit/
 
 ls
 
-npm run cy:ci
+#npm run cy:ci
 
-#npm run testHeadless
+npm run testHeadless
+
 #npm run withHeadTest
