@@ -5,7 +5,7 @@ cd cypressgit/
 #npx cypress run 
 #$(npm bin)/cypress run
 
-node_modules/.bin/cypress open
+ls
 
 npm run cy:ci
 
