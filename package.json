@@ -9,7 +9,7 @@
   },
   "scripts": {
     "cy:ci": "cypress run --headless --spec 'cypress/e2e/*'",
-	"testHeadless": "node_modules/.bin/cypress run",
+	  "testHeadless": "node_modules/.bin/cypress run",
     "withHeadTest": "npm run testHeadless -- --headed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
