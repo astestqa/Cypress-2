@@ -8,7 +8,7 @@
     "cypress": "^10.6.0"
   },
   "scripts": {
-    "cy:ci": "cypress run --headless --spec 'cypress/e2e/*' --key 118d3bea-e544-49cb-89bb-9ef951f572ab",
+    "cy:ci": "cypress run --headless --spec 'cypress/e2e/*'",
 	  "testHeadless": "node_modules/.bin/cypress run",
     "withHeadTest": "npm run testHeadless -- --headed",
     "test": "echo \"Error: no test specified\" && exit 1"
