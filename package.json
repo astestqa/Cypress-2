@@ -5,11 +5,12 @@
   "main": "cypress.config.js",
   "dependencies": {},
   "devDependencies": {
-    "cypress": "^10.6.0"
+    "cypress": "^14.5.4",
+    "cypress-iframe": "^1.0.1"
   },
   "scripts": {
     "cy:ci": "cypress run --record --key 118d3bea-e544-49cb-89bb-9ef951f572ab --headless --spec 'cypress/e2e/*'",
-	  "testHeadless": "node_modules/.bin/cypress run",
+    "testHeadless": "node_modules/.bin/cypress run",
     "withHeadTest": "npm run testHeadless -- --headed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

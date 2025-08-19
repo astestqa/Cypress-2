@@ -1,4 +1,4 @@
-
+import 'cypress-iframe';
 
 describe('Bienvenu formation de Cypress section 1', () => {
 
