@@ -1,81 +1,31 @@
 resources:
-- name: cypressgit
-  type: git
-  icon: github
-  source:
-    uri: https://github.com/Sparsh79/LearningCypress.git
-    branch: master
-
-- name: node-image
-  type: registry-image
-  source:
-    repository: node
-    tag: 13.10.1-stretch
-
-# - name: cypress-image
-  # type: docker-image
-  # source:
-    # repository: ddubson/cypress-e2e
+  - name: repo
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/astestqa/Cypress-2.git
+      branch: master
 
 jobs:
-- name: test
-  public: true
-  plan:
-  - get: node-image
-  - get: cypressgit
-    trigger: true
-  - task: install
-    image: node-image
-    config:
-      inputs:
-      - name: cypressgit
-      outputs:
-      - name: dependencies
-        path: cypressgit/node_modules
-      platform: linux
-      run:
-        path: npm
-        args: ["install"]
-        dir: cypressgit
-  - task: running
-    file: cypressgit/test.yml
-  # - task: run-cypress
-  #   platform: linux
-  #   image_resource:
-  #       type: docker-image
-  #       source:
-  #         repository: ddubson/cypress-e2e
-  #   inputs:
-  #    - cypressgit
-  #   run:
-  #     path: cypressgit/ci/e2e.sh
-  #     run:
-  #       path: npm
-  #       args: ["run-script testHeadless"]
-  #       dir: cypressgit
-
-  # - task: run-cypress
-  #   image: node-image
-  #   config:
-  #     inputs:
-  #     - name: cypressgit
-  #     # outputs: 
-  #     # - name: dependencies
-  #       # path: cypressgit/node_modules/.bin/cypress
-  #     platform: linux
-  #     run:
-  #       path: npm
-  #       args: ["run-script","testHeadless"]
-  #       dir: cypressgit
-  # - task: test
-  #   image: node-image
-  #   config:
-  #     inputs:
-  #     - name: cypressgit
-  #     - name: dependencies
-  #       path: cypressgit/node_modules/.bin/cypress
-  #     platform: linux
-  #     run:
-  #       path: cypressgit
-  #       args: ["cypress run"]
-  #       dir: cypressgit
+  - name: test
+    public: true
+    plan:
+      - get: repo
+        trigger: true
+      - task: run-cypress-tests
+        config:
+          platform: linux
+          inputs:
+            - name: repo
+          image_resource:
+            type: registry-image
+            source:
+              repository: cypress/included
+          run:
+            path: /bin/bash
+            dir: repo
+            args:
+              - -cx
+              - |
+                npm ci # clean install project
+                npm run cy:ci # check package.json > scripts > cy:ci
