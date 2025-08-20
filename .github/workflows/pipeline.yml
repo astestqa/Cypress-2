@@ -1,7 +1,3 @@
-# References: 
-# - https://github.com/marketplace/actions/cypress-io#end-to-end-testing
-# - https://github.com/marketplace/actions/cypress-io#record-test-results-on-cypress-cloud
-
 name: Cypress Tests
 
 on: 
