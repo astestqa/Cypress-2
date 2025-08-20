@@ -17,5 +17,4 @@ jobs:
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v6
         with:
-          node-version: '20.x'
           start: npm run cy:ci
