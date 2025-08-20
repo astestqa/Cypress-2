@@ -1,0 +1,21 @@
+# References: 
+# - https://github.com/marketplace/actions/cypress-io#end-to-end-testing
+# - https://github.com/marketplace/actions/cypress-io#record-test-results-on-cypress-cloud
+
+name: Cypress Tests
+
+on: 
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  test:
+    runs_on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v6
+        with:
+          node-version: '20.x'
+          start: npm run ci:cy
